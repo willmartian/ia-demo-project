@@ -10,6 +10,7 @@ Thanks for checking out my project! It can be viewed online at https://ia-demo-p
 ## Action Items
 - Needs mobile breakpoints to fix responsiveness
 - Add loading spinning to iframe
+- Create type definition for API to avoid `any` types
 - Check for a11y errors with [axe](https://github.com/dequelabs/axe-core)
 
 ## Screenshots

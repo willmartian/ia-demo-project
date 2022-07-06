@@ -1,5 +1,6 @@
 import { html, css, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
+import { formatDate } from "./utils";
 
 /**
  * Presents a review from the Internet Archive API
@@ -44,10 +45,6 @@ export class ReviewElement extends LitElement {
   @property({ type: Number })
   stars!: number;
 
-  private formatDate(dateString: string) {
-    return new Date(dateString).toLocaleDateString();
-  }
-
   render() {
     return html`<article>
       <h3>${this.reviewtitle}</h3>
@@ -56,7 +53,7 @@ export class ReviewElement extends LitElement {
         <b>${this.reviewer}</b>
         -
         <span>${"🤩".repeat(this.stars)}</span>
-        - ${this.formatDate(this.reviewdate)}
+        - ${formatDate(this.reviewdate)}
       </footer>
     </article>`;
   }
