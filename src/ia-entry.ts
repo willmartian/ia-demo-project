@@ -108,6 +108,7 @@ export class MyElement extends LitElement {
     dd {
       margin-left: 0;
       margin-bottom: 0.5em;
+      overflow-wrap: break-word;
     }
 
     @media only screen and (max-width: 1200px) {
@@ -217,7 +218,10 @@ export class MyElement extends LitElement {
         </div>
         <section id="reviews">
           <h2>Reviews</h2>
-          ${reviews.map(
+          ${!reviews && html`
+            <p>There are no reviews... yet.</p>
+          `}
+          ${reviews?.map(
             (review: any) => html`
               <ia-review
                 reviewer=${review.reviewer}
