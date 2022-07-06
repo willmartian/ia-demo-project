@@ -54,14 +54,15 @@ export class MyElement extends LitElement {
       display: flex;
       align-items: center;
       justify-content: center;
-      border-right: 12px solid #737373;
+      border: 12px solid #737373;
+      border-left: none;
+      border-bottom: none;
     }
 
     #details {
       display: flex;
       flex-direction: column;
-      padding-left: 3em;
-      padding-top: 3em;
+      padding: 3em;
     }
 
     #details > section {
@@ -109,9 +110,13 @@ export class MyElement extends LitElement {
       margin-bottom: 0.5em;
     }
 
-    @media only screen and (min-width: 600px) {
+    @media only screen and (max-width: 1200px) {
+      article { 
+        flex-direction: column;
+      }
       #iframe-container {
-        position: default;
+        position: unset;
+        border-right: none;
       }
     }
   `;
