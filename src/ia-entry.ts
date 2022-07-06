@@ -218,20 +218,20 @@ export class MyElement extends LitElement {
         </div>
         <section id="reviews">
           <h2>Reviews</h2>
-          ${!reviews && html`
-            <p>There are no reviews... yet.</p>
-          `}
-          ${reviews?.map(
-            (review: any) => html`
-              <ia-review
-                reviewer=${review.reviewer}
-                stars=${review.stars}
-                reviewtitle=${review.reviewtitle}
-                reviewbody=${review.reviewbody}
-                reviewdate=${review.reviewdate}
-              ></ia-review>
-            `
-          )}
+          ${!reviews 
+            ? html`<p>There are no reviews... yet.</p>`
+            : reviews?.map(
+              (review: any) => html`
+                <ia-review
+                  reviewer=${review.reviewer}
+                  stars=${review.stars}
+                  reviewtitle=${review.reviewtitle}
+                  reviewbody=${review.reviewbody}
+                  reviewdate=${review.reviewdate}
+                ></ia-review>
+              `
+            )
+          }
         </section>
         <section id="related">
           <h2>Related Items</h2>
