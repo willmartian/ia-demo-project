@@ -116,6 +116,9 @@ export class MyElement extends LitElement {
     }
   `;
 
+  /**
+   * The id of the item to retrieve. Retrieved from URL search param "id", with a default value of "InformationM"
+   */
   @state()
   private _id =
     new URLSearchParams(window.location.search).get("id") || "InformationM";
@@ -132,8 +135,10 @@ export class MyElement extends LitElement {
             reviews: res.reviews,
             metadata: Object.entries(res.metadata)
               .filter(
+                // Terms to filter from the metadata list
                 (item: any) => !["title", "description"].includes(item[0])
               )
+              // Sort terms alphabetically
               .sort((a, b) => a[0].localeCompare(b[0])),
           };
         }),
@@ -154,7 +159,9 @@ export class MyElement extends LitElement {
     document.title = this._id + " - Internet Archive";
   }
 
+  // TODO: test for edge cases
   private _formatValue(key: string, value: string): TemplateResult<1> | string {
+    // Convert URLs to hyperlinks
     if (value.startsWith("http")) {
       return html`<a href=${value}>${value}</a>`;
     }
@@ -225,6 +232,7 @@ export class MyElement extends LitElement {
     });
   }
 
+  // TODO: Use an ia-loading element as a placeholder for the iframe, to be replaced on the iframe's "load" event.
   render() {
     return html`
       <article>

@@ -38,6 +38,9 @@ export class ReviewElement extends LitElement {
   @property()
   reviewtitle!: string;
 
+  /**
+   * The star rating of the review.
+   */
   @property({ type: Number })
   stars!: number;
 

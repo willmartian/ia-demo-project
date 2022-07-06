@@ -37,9 +37,15 @@ export class IALoadingElement extends LitElement {
     }
   `;
 
+  /**
+   * When true, shows an error message. When false, shows a loading spinner.
+   */
   @property({ type: Boolean })
   error: boolean = false;
 
+  /**
+   * Error message to show when `this.error` is true.
+   */
   @property()
   message: string = "Something went wrong :(";
 
