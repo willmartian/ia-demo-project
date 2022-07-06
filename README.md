@@ -1,6 +1,6 @@
 # Will's Internet Archive Demo Project
 
-Thanks for checking out my project!
+Thanks for checking out my project! It can be viewed online at https://ia-demo-project.netlify.app/
 
 ## Running locally
 - Clone this repo
@@ -15,7 +15,7 @@ Thanks for checking out my project!
 ## Screenshots
 
 ![Screenshot 1](screenshots/iaProject-ss1.png)
-
+---
 ![Screenshot 2](screenshots/iaProject-ss2.png)
-
+---
 ![Screenshot 3](screenshots/iaProject-ss3.png)
